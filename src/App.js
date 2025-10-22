@@ -6,6 +6,9 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
 import MovieDetails from './pages/MovieDetails';
+import SeatSelection from './pages/SeatSelection';
+import BookingConfirmation from './pages/BookingConfirmation';
+import MyBookings from './pages/MyBookings';
 import './App.css';
 
 const PrivateRoute = ({ children }) => {
@@ -63,6 +66,30 @@ function AppContent() {
             element={
               <PrivateRoute>
                 <MovieDetails />
+              </PrivateRoute>
+            } 
+          />
+          <Route 
+            path="/booking/:showtimeId" 
+            element={
+              <PrivateRoute>
+                <SeatSelection />
+              </PrivateRoute>
+            } 
+          />
+          <Route 
+            path="/booking-confirmation/:bookingId" 
+            element={
+              <PrivateRoute>
+                <BookingConfirmation />
+              </PrivateRoute>
+            } 
+          />
+          <Route 
+            path="/my-bookings" 
+            element={
+              <PrivateRoute>
+                <MyBookings />
               </PrivateRoute>
             } 
           />
